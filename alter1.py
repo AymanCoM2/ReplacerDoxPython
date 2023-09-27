@@ -1,5 +1,5 @@
 from docx import Document
-
+from docx2pdf import convert
 document = Document('Invoice.docx')
 
 dic = {
@@ -10,6 +10,7 @@ dic = {
     '${a_5}': 'حبة E',
     '${a_6}': '60',
     '${a_7}': 'This is Going to be the long text to',
+    # TODO , Replacing this For the Tempalte 
     '${a_8}': 'abcvvv',
     '${a_9}': '1',
 }
@@ -25,3 +26,4 @@ for p in document.paragraphs:
 document.save('new.docx')
 
 # https://stackoverflow.com/questions/34779724/python-docx-replace-string-in-paragraph-while-keeping-style/57365257#57365257
+# convert("new.docx", "output.pdf")
